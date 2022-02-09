@@ -7,21 +7,17 @@ import (
 	"flag"
 	"github.com/BurntSushi/toml"
 	"fmt"
-	"github.com/stockbit_test/types"
+	"github.com/tonyfajar/tonyfajar_diary/app/types"
 )
 
 
 
 func initConfig() {
-	var (
-		config     types.Server
-		configPath string
-	)
 
-	if _, err := toml.DecodeFile("config.toml", &config); err != nil {
+	if _, err := toml.DecodeFile("config.toml", &types.Config.config); err != nil {
 		fmt.Println(err)
 	}
-	flag.StringVar(&configPath, "config", "config.toml", "Path to config file")
+	flag.StringVar(&types.Config.ConfigPath, "config", "config.toml", "Path to config file")
   	flag.Parse()
 }
 

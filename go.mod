@@ -1,4 +1,4 @@
-module github.com/tonyfajar_dairy
+module github.com/tonyfajar/tonyfajar_diary
 
 go 1.15
 
